@@ -3,7 +3,7 @@
 
 Welcome to @sherpa.playero
 
-{% assign date = '2024-05-20T10:20:26Z' %}
+{% assign date = '2024-06-20T10:20:26Z' %}
 
 - Original date - {{ date }}
 - With timeago filter - {{ date | timeago }}
