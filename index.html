@@ -1,17 +1,21 @@
 ---
-title: @sherpa.playero
+layout: page
+title: Home
 ---
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
-</head>
-<body>
-  <h1>Welcome to {{ page.title }}</h1>
-  {% assign date = '2024-06-20T10:20:26Z' %}
 
-  - Original date - {{ date }}
-  - With timeago filter - {{ date | timeago }}
-  </body>
-</html>
+<p class="featured">Featured posts</p>
+<h2 class="heading-secondary dark-blue">Latest posts</h2>
+
+<div class="post-row">
+{% for post in site.posts %}
+  <div class="post-front">
+    <img class="post-front__image" src="{{ post.image }}">
+    <a class="preview-title" href="{{ post.url }}">{{ post.title }}</a>
+    <div class="tag-group"> 
+      {% for tag in post.tags %}
+      <div class="tag"><span class="tag-text">{{ tag }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
